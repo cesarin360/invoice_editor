@@ -1,0 +1,556 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:adenda="https://www.digifact.com.gt/dtecomm" xmlns:camb="http://www.sat.gob.gt/dte/fel/CompCambiaria/0.1.0" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:dteref="http://www.sat.gob.gt/face2/ComplementoReferenciaNota/0.1.0" xmlns:dtesp="http://www.sat.gob.gt/face2/ComplementoFacturaEspecial/0.1.0" xmlns:exp="http://www.sat.gob.gt/face2/ComplementoExportaciones/0.1.0" xmlns:p="http://www.sat.gob.gt/dte/fel/0.2.0">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <title>
+   DTE
+  </title>
+  <style type="text/css">
+   .wrapper{
+              position:relative;
+          }
+          .right{
+              width:80%;
+              position:absolute;
+          }
+          .left{
+              width:20%;
+              position:absolute;
+          }
+          .right{
+              right:0;
+          }
+          .left{
+              left:0;
+          }
+          .border-all-2
+          {
+              border:1px solid #a1a1a1;
+              padding:5px 0px;
+              border-radius:5px 5px 5px 5px;
+          }
+          .bordertop-left{
+              color:white;
+              border:0px solid #a1a1a1;
+              padding:5px 0px;
+              border-radius:5px 0px 0px 0px;
+          }
+          .border-line{
+              color:white;
+              border:0px solid #a1a1a1;
+              padding:5px 0px;
+          }
+          .border-all{
+              color:white;
+              border:0px solid #a1a1a1;
+              padding:5px 0px;
+              border-radius:5px 5px 5px 5px;
+          }
+          .bordertop-rigth{
+              color:white;
+              border:0px solid #a1a1a1;
+              padding:5px 0px;
+              border-radius:0px 5px 0px 0px;
+          }
+          .borderbuttom-left{
+              color:white;
+              border:0px solid #a1a1a1;
+              padding:5px 0px;
+              border-radius:5px 0px 0px 0px;
+          }
+          .borderbuttom-rigth{
+              color:white;
+              border:0px solid #a1a1a1;
+              padding:5px 0px;
+              border-radius:5px 0px 0px 0px;
+          }
+          body {
+          background-color: transparent;
+          padding: 0in;
+          margin: 0;
+          font-family: Arial;
+          font-size: 7pt;
+          text-align: left;
+          }
+          .page {
+          margin: 0;
+          padding: 0.25in;
+          
+          width: 8in;
+          font-family: Arial;
+          font-size: 7pt;
+          text-align: left;
+          background: white;
+          }
+          .page_ANULADO {
+          margin: 0;
+          padding: 0.25in;
+          
+          width: 8in;
+          font-family: Arial;
+          font-size: 7pt;
+          text-align: left;        
+          backgroun:transparent;
+          background-image:url('http://10.1.10.3:8097/mx.com.fact.res/logo/watermark_anulada.png');
+          background-repeat: repeat;
+          }
+          /* Table */
+          table {
+          font-family: Arial;
+          font-size: 7pt;
+          text-align: left;
+          background: transparent;
+          /*
+          border-color: #808080;
+          border-style: solid;
+          border-width: 1px;
+          */
+          }
+          td {
+          vertical-align: top;
+          border-color: #808080;
+          /*
+          border-bottom-style: solid;
+          border-bottom-width: 1px;
+          */
+          padding-left: 0.02in;
+          padding-right: 0.02in;
+          padding-top: 0.02in;
+          padding-bottom: 0.02in;
+          }
+          td .free {
+          vertical-align: top;
+          width: 100%;
+          border-color: #808080;
+          /*
+          border-bottom-style: solid;
+          border-bottom-width: 1px;
+          */
+          padding-right: 0.0in;
+          padding-top: 0.02in;
+          padding-bottom: 0.02in;
+          }
+          .vcenter {
+          vertical-align: middle;
+          }
+          .hright {
+          text-align: right;
+          }
+          .hcenter {
+          text-align: center;
+          }
+          .hleft {
+          text-align: left;
+          }
+          .nowidth {
+          width: 10%;
+          }
+          hr {
+          height:1px;
+          background-color: #808080;
+          border: 0;
+          /* for ie */
+          width: 100%;
+          color: #808080;
+          }
+          hr .low {
+          height:1px;
+          background-color: #808080;
+          border: 0;
+          /* for ie */
+          width: 50%;
+          color: #808080;
+          padding: 0;
+          margin:0;
+          }
+          /* Styling */
+          pre {
+          font-family: "Courier New";
+          font-size: 7pt;
+          padding: 0;
+          margin: 0;
+          text-align: left;
+          /* to compensate for fort metrics */
+          }
+          h3 {
+          font-family: Arial;
+          font-size: 12pt;
+          /*
+          text-align: left;
+          background: white;
+          border-color: #808080;
+          border-style: solid;
+          border-width: 1px;
+          */
+          }
+   .page { display: block; margin-left: auto; margin-right: auto; }
+  </style>
+  <meta charset="utf-8"/>
+ </head>
+ <body>
+  <div class="page">
+   <table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+     <tr>
+      <td width="25%">
+       <table cellpadding="0" cellspacing="" width="100%">
+        <tr>
+         <td>
+          <img align="left" alt="[logo]" src="https://felgtaws.digifact.com.gt/mx.com.fact.res/logo/000105242616_4.jpg" width="170px"/>
+          <br/>
+         </td>
+        </tr>
+       </table>
+      </td>
+      <td align="center" colspan="2" width="55%">
+       <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+         <td align="center" colspan="3">
+          <b style="font-family:arial;font-size:16px;">
+           <div class="border-all" style="background-color: #000000;">
+            DIGITAL TEC
+           </div>
+          </b>
+          <br/>
+          JIMY JASSON, M&Eacute;NDEZ JIMENEZ
+          <br/>
+          CARRETERA INTERAMERICANA ZONA 4 Jutiapa
+          <br/>
+          JUTIAPA
+          <br/>
+         </td>
+        </tr>
+       </table>
+      </td>
+      <td align="center" width="20%">
+       <br/>
+       <br/>
+       <br/>
+       <div class="border-all-2">
+        <b style="font-family:arial;font-size:9px;">
+         FACTURA
+        </b>
+        <br/>
+        <table>
+         <tr>
+          <td>
+           <b>
+            Serie:
+           </b>
+          </td>
+         </tr>
+         <tr>
+          <td>
+           0B3B3F45
+          </td>
+         </tr>
+         <tr>
+          <td>
+           <b>
+            No.:
+           </b>
+          </td>
+         </tr>
+         <tr>
+          <td>
+           857426566
+          </td>
+         </tr>
+         <tr>
+          <td>
+           <b>
+            No. Autorizacion:
+           </b>
+          </td>
+         </tr>
+         <tr>
+          <td colspan="2">
+           0B3B3F45-331B-4A86-BC30-49DA73F5DB77
+          </td>
+         </tr>
+        </table>
+       </div>
+       <br/>
+       <br/>
+       <br/>
+      </td>
+     </tr>
+     <tr>
+      <td align="left">
+       <b>
+        NIT: 105242616
+       </b>
+      </td>
+      <td align="center" colspan="2">
+      </td>
+      <td align="center" style="color:white;border-width: 1px; border-left-style: solid; border-right-style: solid; border-collapse:collapse; border: none; border-top-style: solid; border-bottom-style: none">
+       <div class="border-all" style="background-color: #000000;">
+        <b>
+         GUATEMALA,
+        </b>
+        26-11-2021
+       </div>
+      </td>
+     </tr>
+    </table>
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+     <tr>
+      <td style="border-color: #000000;border-width: 1px; border-left-style: solid; border-right-style: none; border-top-style: solid; border-bottom-style: solid" width="10%">
+       <b>
+        NOMBRE:
+       </b>
+       <br/>
+       <b>
+        DIRECCI&Oacute;N:
+       </b>
+       <br/>
+       <br/>
+      </td>
+      <td align="left" style="border-color: #000000;border-width: 1px; border-left-style: none; border-right-style: none; border-top-style: solid; border-bottom-style: solid" width="30%">
+       <b>
+        LACTEOS EL COCO SOCIEDAD ANONIMA
+       </b>
+       <br/>
+       CIUDAD GUATEMALA
+       <br/>
+       GUATEMALA
+      </td>
+      <td style="border-color: #000000;border-width: 1px; border-left-style: none; border-right-style: none; border-top-style: solid; border-bottom-style: solid" width="5%">
+       <b>
+        NIT:
+       </b>
+      </td>
+      <td style="border-color: #000000;border-width: 1px; border-left-style: none; border-right-style: none; border-top-style: solid; border-bottom-style: solid" width="5%">
+       <b>
+        95812350
+       </b>
+      </td>
+      <td style="border-color: #000000;border-width: 1px; border-left-style: SOLID; border-right-style: none; border-top-style: solid; border-bottom-style: solid" width="20%">
+       <b>
+        OBSERVACIONES:
+       </b>
+       <br/>
+       -
+      </td>
+      <td style="border-color: #000000;border-width: 1px; border-left-style: none; border-right-style: solid; border-top-style: solid; border-bottom-style: solid" width="20%">
+      </td>
+     </tr>
+    </table>
+    <br/>
+    <br/>
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+     <thead>
+      <tr>
+       <th class="hcenter" height="20px" style="background-color: #000000; color: white; border-radius: 5px 0 0 0" width="15%">
+        <b>
+         CANTIDAD
+        </b>
+       </th>
+       <th class="hcenter" style="background-color: #000000; color: white" width="65%">
+        DESCRIPCION
+       </th>
+       <th class="hcenter" style="background-color: #000000; color: white" width="10%">
+        P. UNITARIO
+       </th>
+       <th class="hcenter" style="background-color: #000000; color: white; border-radius: 0 5px 0 0" width="10%">
+        TOTAL
+       </th>
+      </tr>
+     </thead>
+     <tr>
+      <td align="center" height="290px" style="border: solid #000000; border-width: 1px 1px 0 1px">
+       <table valign="top" width="100%">
+        <tr>
+         <td height="16px" valign="bottom">
+          1.00
+         </td>
+        </tr>
+        <tr>
+         <td height="16px" valign="bottom">
+          1.00
+         </td>
+        </tr>
+        <tr>
+         <td height="16px" valign="bottom">
+          1.00
+         </td>
+        </tr>
+        <tr>
+         <td height="16px" valign="bottom">
+          1.00
+         </td>
+        </tr>
+       </table>
+      </td>
+      <td height="290px" style="border: solid #000000; border-width: 1px 1px 0 0">
+       <table width="100%">
+        <tr>
+         <td height="16px" valign="top">
+          CERTIFICACION DE DOCUMENTOS TRIBUTARIOS ELECTRONICOS, CONTRATO ANUAL DE 1,500 FACTURAS
+         </td>
+        </tr>
+        <tr>
+         <td height="16px" valign="top">
+          Servicio de Gesti&oacute;n, Implementaci&oacute;n y Capacitaci&oacute;n
+         </td>
+        </tr>
+        <tr>
+         <td height="16px" valign="top">
+          SUNMI D2 MINI - Terminal inteligente Android con impresora integrada.
+         </td>
+        </tr>
+        <tr>
+         <td height="16px" valign="top">
+          INSTALACION SUNMI D2 MINI
+         </td>
+        </tr>
+       </table>
+      </td>
+      <td align="right" height="290px" style="border: solid #000000; border-width: 1px 1px 0 0">
+       <table valign="top">
+        <tr>
+         <td height="16px" valign="bottom">
+          Q675.00
+         </td>
+        </tr>
+        <tr>
+         <td height="16px" valign="bottom">
+          Q500.00
+         </td>
+        </tr>
+        <tr>
+         <td height="16px" valign="bottom">
+          Q3,800.00
+         </td>
+        </tr>
+        <tr>
+         <td height="16px" valign="bottom">
+          Q250.00
+         </td>
+        </tr>
+       </table>
+      </td>
+      <td align="right" height="290px" style="border: solid #000000; border-width: 1px 1px 0 0">
+       <table>
+        <tr>
+         <td height="16px" valign="bottom">
+          Q675.00
+         </td>
+        </tr>
+        <tr>
+         <td height="16px" valign="bottom">
+          Q500.00
+         </td>
+        </tr>
+        <tr>
+         <td height="16px" valign="bottom">
+          Q3,800.00
+         </td>
+        </tr>
+        <tr>
+         <td height="16px" valign="bottom">
+          Q250.00
+         </td>
+        </tr>
+       </table>
+      </td>
+     </tr>
+     <tr>
+      <td align="center" style="border: solid #000000; border-width: 0 1px 1px 1px">
+      </td>
+      <td padding="10px" style="border: solid #000000; border-width: 0 1px 1px 0">
+      </td>
+      <td align="right" style="border: solid #000000; border-width: 0 1px 1px 0">
+      </td>
+      <td align="right" padding="10px" style="border: solid #000000; border-width: 0 1px 1px 0">
+      </td>
+     </tr>
+     <tr>
+      <td colspan="2" style="border: solid #000000; border-width: 0 1px 1px 1px; border-radius: 0 0 0 5px">
+       <b>
+        TOTAL EN LETRAS:
+        <br/>
+        CINCO MIL DOSCIENTOS VEINTICINCO QUETZALES CON 00/100
+       </b>
+      </td>
+      <td align="center" style="border: solid #000000; border-width: 0 1px 1px 0">
+       <b style="font-family:arial;font-size:14px;">
+        TOTAL
+       </b>
+      </td>
+      <td align="center" style="border: solid #000000; border-width: 0 1px 1px 0; border-radius: 0 0 5px 0" valign="middle">
+       <b>
+        <div class="wrapper">
+         <div class="left">
+          Q
+         </div>
+         <div class="right">
+          5,225.00
+         </div>
+        </div>
+       </b>
+      </td>
+     </tr>
+     <tr>
+      <td colspan="5">
+       <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+         <td align="center">
+          <table>
+           <tr>
+            <td align="center">
+             <b>
+              SUJETO A PAGOS TRIMESTRALES
+             </b>
+            </td>
+           </tr>
+           <tr>
+            <td align="center">
+             <img alt="DTE" height="80" src="https://felgtaws.digifact.com.gt/QRService/api/QR?data=https://felpub.c.sat.gob.gt/verificador-web/publico/vistas/verificacionDte.jsf?tipo=autorizacion|numero=0B3B3F45-331B-4A86-BC30-49DA73F5DB77|emisor=105242616|receptor=95812350|monto=5225.00&amp;size=100x100" title="Su DTE FEL" width="80"/>
+            </td>
+           </tr>
+          </table>
+         </td>
+        </tr>
+        <tr>
+        </tr>
+        <tr>
+        </tr>
+       </table>
+      </td>
+     </tr>
+    </table>
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+     <tr>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td align="center" colspan="4" style="border-radius: 5px 5px 0px 0px; border-color: #000000;border-width: 1px; border-left-style: solid; border-right-style: solid; border-top-style: solid; border-bottom-style: solid;">
+       <b>
+        DATOS DEL CERTIFICADOR
+       </b>
+      </td>
+     </tr>
+     <tr>
+      <td style="border-radius: 0px 0px 5px 5px; border-color: #000000;border-width: 1px; border-left-style: solid; border-right-style: solid; border-top-style: none; border-bottom-style: solid;">
+       CERTIFICADOR NIT 7745482-0 DIGIFACT SERVICIOS, SOCIEDAD ANONIMA  https://felgtaws.digifact.com.gt  Fecha Hora Certificacion 2021-11-26T09:23:43
+      </td>
+     </tr>
+     <tr>
+      <td align="right">
+       <img alt="logo fel" height="50px" src="https://felgtaws.digifact.com.gt/mx.com.fact.res/logo//logofel.jpg"/>
+      </td>
+     </tr>
+    </table>
+   </table>
+   <style>
+    h1{ font-family: Arial; font-weight: normal; font-size: 20px; color: #000000; }
+   </style>
+   <h1>
+    NO. AUTORIZACI&Oacute;N: 45454521
+   </h1>
+   <hr/>
+  </div>
+ </body>
+</html>

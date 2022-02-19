@@ -1,0 +1,6 @@
+pyperclip==1.8.2
+requests==2.27.1
+urllib3==1.26.8
+pdfkit==1.0.0
+bs4==0.0.1
+configparser==5.2.0
